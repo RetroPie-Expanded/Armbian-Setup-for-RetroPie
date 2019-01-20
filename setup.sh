@@ -137,7 +137,7 @@ install_basis () {
         echo "##  Installing kernel headers  ##"
         echo "#################################"
         echo ""
-        wget https://github.com/MySora/linux-headers/raw/master/armbian/linux-headers-rockchip_5.50.deb
+        wget https://github.com/RetroPie-Expanded/linux-headers/raw/master/armbian/linux-headers-rockchip_5.50.deb
         sudo dpkg -i linux-headers-rockchip_5.50.deb
         rm *.deb
         
