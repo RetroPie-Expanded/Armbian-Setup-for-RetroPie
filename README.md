@@ -1,5 +1,4 @@
 # Armbian-Setup-for-RetroPie
-==============================
 
 The setup.sh is a bash script for RetroPie on the Tinker Board or Tinker Board S
 
@@ -17,6 +16,4 @@ Then run it
 ```shell
 ./setup
 ```
-Then 
-
-Answer Y to all questions, and follow on screen prompts at the end.
+Then answer Y to all questions, and follow on screen prompts at the end.
