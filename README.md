@@ -1,6 +1,22 @@
 # Armbian-Setup-for-RetroPie
-setup.sh is a bash script for retropie on the  tinkerboard
+==============================
 
-all other files are the changes i've make for baground music or other extra
+The setup.sh is a bash script for RetroPie on the Tinker Board or Tinker Board S
 
-This is a modified version for Armbian 5.50 kernel 4.4.135 with a working libmali version
+All other files are the changes I've make for baground music or other extra the scrit will pull them when and if needed.
+
+How to use
+============
+```shell
+wget https://raw.githubusercontent.com/RetroPie-Expanded/Armbian-Setup-for-RetroPie/master/setup.sh
+sudo chmod a+x setup.sh
+```
+
+Then run it
+============
+```shell
+./setup
+```
+Then 
+
+Answer Y to all questions, and follow on screen prompts at the end.
