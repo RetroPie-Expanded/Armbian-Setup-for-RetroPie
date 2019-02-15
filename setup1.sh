@@ -220,24 +220,9 @@ install_basis () {
         echo "##  Cloning RetroPie  ##"
         echo "########################"
         echo ""
-        git clone --depth=1 https://github.com/RetroPie-Expanded/RetroPie-Setup.git
+        git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
-        echo "############################"
-        echo "##  Installing gpu boost  ##"
-        echo "############################"
-        echo ""
-		wget https://raw.githubusercontent.com/RetroPie-Expanded/Armbian-Setup-for-RetroPie/gpu-freqboost-tinker
-		
-		sudo cp -v "gpu-freqboost-tinker" /etc/init.d
-
-		sudo chmod 755 /etc/init.d/gpu-freqboost-tinker
-
-		sudo systemctl enable gpu-freqboost-tinker
-
-		sudo systemctl start gpu-freqboost-tinker
-
-        echo ""		
-        echo ""
+       
         echo "####################################"
         echo "##  Basic installation completed.  ##"
         echo "####################################"
@@ -330,28 +315,7 @@ install_optional () {
             echo "##  Additional controller support installed  ##"
             echo ""
         fi
-                    
-        read -p "Do you want to install Background Music? (Y/N)" -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            echo ""
-            echo "#####################################"
-            echo "##  Installing Background Music  ##"
-            echo "#####################################"
-            echo ""
-            mkdir -p $HOME/RetroPie/roms/music
-            sudo mkdir -p /opt/retropie/configs/all
-            sudo wget https://raw.githubusercontent.com/RetroPie-Expanded/Armbian-Setup-for-RetroPie/master/autostart.sh -O /opt/retropie/configs/all/autostart.sh
-            sudo wget https://raw.githubusercontent.com/RetroPie-Expanded/Armbian-Setup-for-RetroPie/master/runcommand-onend.sh -O /opt/retropie/configs/all/runcommand-onend.sh
-            sudo wget https://raw.githubusercontent.com/RetroPie-Expanded/Armbian-Setup-for-RetroPie/master/runcommand-onstart.sh -O /opt/retropie/configs/all/runcommand-onstart.sh
-            sudo chmod +x "/opt/retropie/config/all/autostart.sh" "/opt/retropie/config/all/runcommand-onend.sh" "/opt/retropie/config/all/runcommand-onstart.sh"
-            echo ""
-            echo "##  Background Music ready  ##"
-            echo "## You can drop your music files into ~/RetroPie/roms/music"
-            echo ""
-        fi
-                    
+        
         read -p "Do you want to install OMXPLAYER for splachscreen? (Y/N)" -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]
@@ -372,22 +336,7 @@ install_optional () {
             echo "##  OMXPLAYER installed  ##"
             echo ""
         fi
-	    read -p "Do you want to install TheBezelProject? (Y/N)" -n 1 -r
-        echo	
-		if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            echo ""
-            echo "#####################################"
-            echo "##  Install TheBezelProject  ##"
-            echo "#####################################"
-            echo ""
-			mkdir -p $HOME/RetroPie/retropiemenu/
-            sudo wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh -O /home/$USER/RetroPie/retropiemenu/bezelproject.sh
-            sudo chmod +x "/home/$USER/RetroPie/retropiemenu/bezelproject.sh"       
-            echo ""
-            echo "##  TheBezelProject is ready  ##"
-            echo ""
-        fi
+	
 		read -p "Do you want to create a symlink from pi to this user? (Y/N)" -n 1 -r
         echo	
 		if [[ $REPLY =~ ^[Yy]$ ]]
